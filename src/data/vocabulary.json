@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "word": "serendipity",
+    "lang": "en",
+    "translation": "السعادة المفاجئة / حسن الحظ",
+    "meaning": "The occurrence of happy or beneficial events by chance",
+    "example": "Finding that old friend at the café was pure serendipity.",
+    "level": "advanced",
+    "tags": ["emotion", "luck"]
+  },
+  {
+    "id": 2,
+    "word": "ephemeral",
+    "lang": "en",
+    "translation": "زائل / مؤقت",
+    "meaning": "Lasting for a very short time",
+    "example": "The ephemeral beauty of cherry blossoms makes them more precious.",
+    "level": "intermediate",
+    "tags": ["time", "nature"]
+  },
+  {
+    "id": 3,
+    "word": "resilience",
+    "lang": "en",
+    "translation": "المرونة / القدرة على التعافي",
+    "meaning": "The ability to recover quickly from difficulties",
+    "example": "Her resilience after the loss inspired everyone around her.",
+    "level": "intermediate",
+    "tags": ["character", "strength"]
+  },
+  {
+    "id": 4,
+    "word": "ambiguous",
+    "lang": "en",
+    "translation": "غامض / ملتبس",
+    "meaning": "Open to more than one interpretation; not clear",
+    "example": "The contract had several ambiguous clauses that caused confusion.",
+    "level": "intermediate",
+    "tags": ["language", "clarity"]
+  },
+  {
+    "id": 5,
+    "word": "eloquent",
+    "lang": "en",
+    "translation": "بليغ / فصيح",
+    "meaning": "Fluent and persuasive in speaking or writing",
+    "example": "She gave an eloquent speech that moved the entire audience.",
+    "level": "intermediate",
+    "tags": ["language", "communication"]
+  },
+  {
+    "id": 6,
+    "word": "melancholy",
+    "lang": "en",
+    "translation": "حزن عميق / كآبة",
+    "meaning": "A deep, persistent feeling of sadness or depression",
+    "example": "A sense of melancholy settled over him as autumn arrived.",
+    "level": "intermediate",
+    "tags": ["emotion", "feeling"]
+  },
+  {
+    "id": 7,
+    "word": "pragmatic",
+    "lang": "en",
+    "translation": "براغماتي / عملي",
+    "meaning": "Dealing with things sensibly and realistically",
+    "example": "We need a pragmatic approach to solve this problem quickly.",
+    "level": "advanced",
+    "tags": ["thinking", "behavior"]
+  },
+  {
+    "id": 8,
+    "word": "candid",
+    "lang": "en",
+    "translation": "صريح / صادق",
+    "meaning": "Truthful and straightforward; frank",
+    "example": "I appreciate your candid feedback on my work.",
+    "level": "beginner",
+    "tags": ["character", "communication"]
+  },
+  {
+    "id": 9,
+    "word": "tenacious",
+    "lang": "en",
+    "translation": "مثابر / عنيد بإيجابية",
+    "meaning": "Holding firmly to a purpose; persistent and determined",
+    "example": "His tenacious pursuit of the goal finally paid off.",
+    "level": "advanced",
+    "tags": ["character", "strength"]
+  },
+  {
+    "id": 10,
+    "word": "subtle",
+    "lang": "en",
+    "translation": "خفي / دقيق",
+    "meaning": "So delicate or precise as to be difficult to notice",
+    "example": "There was a subtle difference in tone between the two paintings.",
+    "level": "beginner",
+    "tags": ["perception", "detail"]
+  },
+  {
+    "id": 11,
+    "word": "intuition",
+    "lang": "en",
+    "translation": "الحدس / الإحساس الداخلي",
+    "meaning": "The ability to understand something instinctively, without reasoning",
+    "example": "Her intuition told her something was wrong before anyone spoke.",
+    "level": "intermediate",
+    "tags": ["thinking", "feeling"]
+  },
+  {
+    "id": 12,
+    "word": "profound",
+    "lang": "en",
+    "translation": "عميق / بالغ الأثر",
+    "meaning": "Having deep meaning or great insight",
+    "example": "Reading that book had a profound effect on how I see the world.",
+    "level": "intermediate",
+    "tags": ["depth", "thinking"]
+  },
+  {
+    "id": 13,
+    "word": "meticulous",
+    "lang": "en",
+    "translation": "دقيق / مدقق",
+    "meaning": "Showing great attention to detail; very careful and precise",
+    "example": "She was meticulous in reviewing every line of the report.",
+    "level": "advanced",
+    "tags": ["behavior", "work"]
+  },
+  {
+    "id": 14,
+    "word": "obsolete",
+    "lang": "en",
+    "translation": "متقادم / قديم الطراز",
+    "meaning": "No longer in use; out of date",
+    "example": "That technology became obsolete within just a few years.",
+    "level": "intermediate",
+    "tags": ["technology", "time"]
+  },
+  {
+    "id": 15,
+    "word": "empathy",
+    "lang": "en",
+    "translation": "التعاطف / المشاركة الوجدانية",
+    "meaning": "The ability to understand and share the feelings of another",
+    "example": "Good leaders show empathy toward their team members.",
+    "level": "beginner",
+    "tags": ["emotion", "social"]
+  },
+  {
+    "id": 16,
+    "word": "ambivalent",
+    "lang": "en",
+    "translation": "متردد / ذو مشاعر متضاربة",
+    "meaning": "Having mixed feelings or contradictory ideas about something",
+    "example": "She felt ambivalent about leaving her hometown for the new job.",
+    "level": "advanced",
+    "tags": ["emotion", "decision"]
+  },
+  {
+    "id": 17,
+    "word": "scrutinize",
+    "lang": "en",
+    "translation": "يتفحص / يمحص",
+    "meaning": "To examine or inspect closely and thoroughly",
+    "example": "The committee will scrutinize every detail of the proposal.",
+    "level": "advanced",
+    "tags": ["action", "analysis"]
+  },
+  {
+    "id": 18,
+    "word": "lucid",
+    "lang": "en",
+    "translation": "واضح / مفهوم",
+    "meaning": "Expressed clearly; easy to understand",
+    "example": "His lucid explanation made a complex topic easy to grasp.",
+    "level": "intermediate",
+    "tags": ["language", "clarity"]
+  },
+  {
+    "id": 19,
+    "word": "nostalgia",
+    "lang": "en",
+    "translation": "الحنين إلى الماضي",
+    "meaning": "A sentimental longing for the past",
+    "example": "The old song filled her with nostalgia for her school days.",
+    "level": "beginner",
+    "tags": ["emotion", "memory"]
+  },
+  {
+    "id": 20,
+    "word": "perseverance",
+    "lang": "en",
+    "translation": "المثابرة / الإصرار",
+    "meaning": "Continued effort to achieve something despite difficulty",
+    "example": "His perseverance through years of failure eventually led to success.",
+    "level": "beginner",
+    "tags": ["character", "strength"]
+  },
+  {
+    "id": 21,
+    "word": "verbose",
+    "lang": "en",
+    "translation": "مطول / كثير الكلام",
+    "meaning": "Using more words than needed; long-winded",
+    "example": "His verbose report could have been summarized in one page.",
+    "level": "intermediate",
+    "tags": ["language", "communication"]
+  },
+  {
+    "id": 22,
+    "word": "altruistic",
+    "lang": "en",
+    "translation": "إيثاري / غير أناني",
+    "meaning": "Showing selfless concern for the wellbeing of others",
+    "example": "Her altruistic nature led her to donate most of her salary to charity.",
+    "level": "advanced",
+    "tags": ["character", "social"]
+  },
+  {
+    "id": 23,
+    "word": "cynical",
+    "lang": "en",
+    "translation": "متشكك / سلبي",
+    "meaning": "Believing that people are motivated purely by self-interest",
+    "example": "He became cynical about politics after years of broken promises.",
+    "level": "intermediate",
+    "tags": ["attitude", "thinking"]
+  },
+  {
+    "id": 24,
+    "word": "diligent",
+    "lang": "en",
+    "translation": "مجتهد / مثابر",
+    "meaning": "Having or showing care in one's work or duties",
+    "example": "She was diligent in her studies and rarely missed a class.",
+    "level": "beginner",
+    "tags": ["character", "work"]
+  },
+  {
+    "id": 25,
+    "word": "enigmatic",
+    "lang": "en",
+    "translation": "غامض / لغزي",
+    "meaning": "Difficult to interpret or understand; mysterious",
+    "example": "The enigmatic smile on the statue puzzled researchers for decades.",
+    "level": "advanced",
+    "tags": ["mystery", "perception"]
+  },
+  {
+    "id": 26,
+    "word": "frugal",
+    "lang": "en",
+    "translation": "مقتصد / موفر",
+    "meaning": "Sparing or economical with money or resources",
+    "example": "Living a frugal lifestyle helped him save enough to retire early.",
+    "level": "intermediate",
+    "tags": ["lifestyle", "money"]
+  },
+  {
+    "id": 27,
+    "word": "gregarious",
+    "lang": "en",
+    "translation": "اجتماعي / محب للتجمع",
+    "meaning": "Fond of company; sociable",
+    "example": "She was so gregarious that she made friends everywhere she went.",
+    "level": "advanced",
+    "tags": ["character", "social"]
+  },
+  {
+    "id": 28,
+    "word": "haphazard",
+    "lang": "en",
+    "translation": "عشوائي / فوضوي",
+    "meaning": "Lacking any obvious principle of organization",
+    "example": "The files were arranged in a haphazard manner with no clear system.",
+    "level": "intermediate",
+    "tags": ["organization", "behavior"]
+  },
+  {
+    "id": 29,
+    "word": "impartial",
+    "lang": "en",
+    "translation": "محايد / غير متحيز",
+    "meaning": "Treating all rivals or disputants equally; unbiased",
+    "example": "A judge must remain impartial throughout the entire trial.",
+    "level": "intermediate",
+    "tags": ["fairness", "attitude"]
+  },
+  {
+    "id": 30,
+    "word": "jovial",
+    "lang": "en",
+    "translation": "مرح / بشوش",
+    "meaning": "Cheerful and friendly; good-humored",
+    "example": "His jovial personality made every team meeting enjoyable.",
+    "level": "intermediate",
+    "tags": ["emotion", "character"]
+  },
+  {
+    "id": 31,
+    "word": "lethargic",
+    "lang": "en",
+    "translation": "خامل / كسول",
+    "meaning": "Affected by lethargy; sluggish and apathetic",
+    "example": "After the long flight, he felt too lethargic to unpack.",
+    "level": "intermediate",
+    "tags": ["feeling", "energy"]
+  },
+  {
+    "id": 32,
+    "word": "mundane",
+    "lang": "en",
+    "translation": "رتيب / عادي",
+    "meaning": "Lacking interest or excitement; dull and ordinary",
+    "example": "Even mundane tasks like washing dishes can be meditative.",
+    "level": "intermediate",
+    "tags": ["lifestyle", "feeling"]
+  },
+  {
+    "id": 33,
+    "word": "nonchalant",
+    "lang": "en",
+    "translation": "لامبالٍ / هادئ بشكل ملفت",
+    "meaning": "Feeling or appearing casually calm and relaxed",
+    "example": "He answered the tough question in a nonchalant tone that surprised everyone.",
+    "level": "advanced",
+    "tags": ["attitude", "behavior"]
+  },
+  {
+    "id": 34,
+    "word": "obstinate",
+    "lang": "en",
+    "translation": "عنيد / متصلب",
+    "meaning": "Stubbornly refusing to change one's opinion or course of action",
+    "example": "He was too obstinate to admit he had made a mistake.",
+    "level": "intermediate",
+    "tags": ["character", "behavior"]
+  },
+  {
+    "id": 35,
+    "word": "pensive",
+    "lang": "en",
+    "translation": "مفكر / شارد الذهن",
+    "meaning": "Engaged in deep or serious thought",
+    "example": "She sat by the window in a pensive mood, staring at the rain.",
+    "level": "intermediate",
+    "tags": ["thinking", "feeling"]
+  },
+  {
+    "id": 36,
+    "word": "quaint",
+    "lang": "en",
+    "translation": "طريف / ذو طابع قديم جميل",
+    "meaning": "Attractively unusual or old-fashioned",
+    "example": "They stayed in a quaint little inn at the edge of the village.",
+    "level": "advanced",
+    "tags": ["aesthetic", "description"]
+  },
+  {
+    "id": 37,
+    "word": "redundant",
+    "lang": "en",
+    "translation": "زائد عن الحاجة / مكرر",
+    "meaning": "Not or no longer needed; superfluous",
+    "example": "Several steps in the process were redundant and wasted time.",
+    "level": "intermediate",
+    "tags": ["language", "work"]
+  },
+  {
+    "id": 38,
+    "word": "stoic",
+    "lang": "en",
+    "translation": "رابط الجأش / متحمل",
+    "meaning": "Enduring pain or hardship without showing feelings or complaining",
+    "example": "She remained stoic throughout the difficult negotiation.",
+    "level": "advanced",
+    "tags": ["character", "emotion"]
+  },
+  {
+    "id": 39,
+    "word": "transient",
+    "lang": "en",
+    "translation": "عابر / مؤقت",
+    "meaning": "Lasting only for a short time; impermanent",
+    "example": "Fame can be transient — here today and forgotten tomorrow.",
+    "level": "advanced",
+    "tags": ["time", "philosophy"]
+  },
+  {
+    "id": 40,
+    "word": "whimsical",
+    "lang": "en",
+    "translation": "متقلب / خيالي بطريقة مرحة",
+    "meaning": "Playfully quaint or fanciful, especially in an appealing way",
+    "example": "The children loved the whimsical illustrations in the storybook.",
+    "level": "advanced",
+    "tags": ["aesthetic", "character"]
+  }
+]
