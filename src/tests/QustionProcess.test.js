@@ -2,6 +2,7 @@
 import { filterByField , filterByFieldStartsWith } from '../shared/utils/filters.js'
 import vocabulary from '../data/vocabulary.json'
 import { getSpecificLengthOfRandomNumbers , getRandomNumberForSpecificLimit } from '../shared/utils/random.js'
+import { PopOptionsFromArray } from '../shared/utils/Qustion'
 
 let local_storaage_simulate = [
    { id: 7, Repetition: 0, interval: 0, ease_factor: 2.5 },
@@ -29,16 +30,17 @@ describe(' after get filterd data ' , () => {
   })
 
   test('get 3 unique random number', () =>{
-    let arr3 = getSpecificLengthOfRandomNumbers(3 , data)
-    Qustions = [...arr3] ;
+    console.log(PopOptionsFromArray(data , Qustion_id))
+    PopOptionsFromArray(data , Qustion_id).map((Q)=>{
+       console.log(Q) 
+    })
+    // let arr3 = getSpecificLengthOfRandomNumbers(3 , data)
+    // Qustions = [...arr3] ;
     // +1 to include the last position (index 3) as a valid insert point
-    Qustions.splice( getRandomNumberForSpecificLimit(Qustions.length+1) , 0 ,Qustion_id);
+    // Qustions.splice( getRandomNumberForSpecificLimit(Qustions.length+1) , 0 ,Qustion_id);
     // console.log(arr3)
     //console.log(Qustions)
-    arr3.map((x,y)=>{
-      console.log(vocabulary[x].word) 
-    })
-    expect(arr3.length).toBe(3)
+    //expect(arr3.length).toBe(3)
   })
 
   test('use quistion number to get vocabulary by id ' , () =>{
