@@ -14,6 +14,6 @@ export function PopOptionsFromArray(data , Q_id) {
       let arr3 = getSpecificLengthOfRandomNumbers(3 , data)
       Qustions = [...arr3] ;
       // +1 to include the last position (index 3) as a valid insert point
-      Qustions.splice( getRandomNumberForSpecificLimit(Qustions.length+1) , 0 ,Q_id);
+      // Qustions.splice( getRandomNumberForSpecificLimit(Qustions.length+1) , 0 ,Q_id);
       return Qustions
 }

@@ -2,6 +2,7 @@ import { useState , useEffect } from 'react'
 import './App.css'
 import { Card, Badge, Button } from './shared/components'
 import {PopQustionFromArray , PopOptionsFromArray } from './shared/utils/Qustion'
+import { getRandomNumberForSpecificLimit , getSpecificLengthOfRandomNumbers } from "../src/shared/utils/random"
 import vocabulary from './data/vocabulary.json'
 
 const LIMIT = 10
@@ -17,14 +18,14 @@ function App() {
   
   return (
     <div style={{ padding: '32px 24px' }}>
-      <h1>
-        {visible.length}
-      </h1>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '640px', margin: '0 auto' }}>
 
+        <h1>
+          {getRandomNumberForSpecificLimit()}
+        </h1>
             <Card.Body>
               <p style={{ margin: '0 0 8px', fontSize: '14px', color: 'var(--accent)', fontWeight: 500 }}>
-                {visible[Q_id].translation}
+                {visible[Q_id].word + "-" +Q_id}
               </p>
             </Card.Body>
         {
@@ -34,7 +35,7 @@ function App() {
                 //console.log(item)
                 //console.log(visible[item].id)
                 console.log(
-                visible[item].id == Q_id+1 ? "wright" : "wrong"
+                visible[item].id == Q_id ? "wright" : "wrong"
               )
                 Q_id = PopOptionsFromArray(visible);
                 item = visible[Q_id] ?? {};
@@ -42,7 +43,7 @@ function App() {
               key={visible[item].id} elevated>
             <Card.Body>
               <p style={{ margin: '0 0 12px', fontSize: '14px', color: 'var(--text)' }}>
-                {visible[item].meaning }
+                {visible[item].translation + "-" +visible[item].id}
               </p>
             </Card.Body>
             {/*
