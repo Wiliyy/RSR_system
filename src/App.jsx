@@ -10,16 +10,15 @@ import {
 } from './shared/utils/dailySession'
 import { speakEnglishWord } from './shared/utils/pronunciation'
 import { getProgress, isMemorized, updateStorage } from './shared/utils/progress'
-import vocabulary from './data/vocabulary.json'
 
-function getOptions(item) {
+function getOptions(item, vocabulary) {
   if (!item) return []
   const questionIndex = vocabulary.findIndex((entry) => entry.id === item.id)
   if (questionIndex < 0) return []
   return PopOptionsFromArray(vocabulary, questionIndex).map((index) => vocabulary[index])
 }
 
-function App() {
+function App({ vocabulary = [] }) {
   const [limit, setLimit] = useState(getDailyLimit)
   const [session, setSession] = useState(() => getDailyPlan(vocabulary, new Date(), limit))
   const [feedback, setFeedback] = useState(null)
@@ -29,7 +28,10 @@ function App() {
   const [audioError, setAudioError] = useState(false)
 
   const currentWord = session.items[0] ?? null
-  const options = useMemo(() => getOptions(currentWord), [currentWord])
+  const options = useMemo(
+    () => getOptions(currentWord, vocabulary),
+    [currentWord, vocabulary],
+  )
   const progressPercent = Math.min(100, (session.reviewedToday / limit) * 100)
 
   function handleAnswer(selectedItem) {
@@ -74,7 +76,7 @@ function App() {
         <section className="empty-state">
           <div className="empty-icon">＋</div>
           <h2>No vocabulary available</h2>
-          <p>Add words to <code>src/data/vocabulary.json</code> and they will appear here.</p>
+          <p>No words are available yet. Please try again later.</p>
         </section>
       )
     }
@@ -163,7 +165,7 @@ function App() {
           <section className="panel library-panel">
             <div className="library-heading">
               <div>
-                <p className="eyebrow">JSON library</p>
+                <p className="eyebrow">Word library</p>
                 <h2>{vocabulary.length} words available</h2>
               </div>
               <Button variant="ghost" size="sm" onClick={() => setShowLibrary(false)}>Close</Button>

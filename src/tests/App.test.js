@@ -27,7 +27,7 @@ describe('App', () => {
   })
 
   it('plays the English pronunciation for the current word', () => {
-    render(createElement(App))
+    render(createElement(App, { vocabulary }))
 
     fireEvent.click(screen.getByRole('button', { name: 'Listen to serendipity' }))
 
@@ -35,9 +35,18 @@ describe('App', () => {
     expect(globalThis.speechSynthesis.speak.mock.calls[0][0].text).toBe('serendipity')
   })
 
+  it('uses a production-facing label for the word library', () => {
+    render(createElement(App, { vocabulary }))
+
+    fireEvent.click(screen.getByRole('button', { name: 'Open word library' }))
+
+    expect(screen.getByText('Word library')).toBeInTheDocument()
+    expect(screen.queryByText('JSON library')).not.toBeInTheDocument()
+  })
+
   it('shows a due word and saves progress when its translation is selected', () => {
     saveDailyLimit(2)
-    render(createElement(App))
+    render(createElement(App, { vocabulary }))
 
     expect(screen.getByRole('heading', { name: 'serendipity' })).toBeInTheDocument()
     expect(screen.getByText('0 of 2 reviews today')).toBeInTheDocument()
@@ -53,7 +62,7 @@ describe('App', () => {
     saveDailyLimit(2)
     recordDailyReview(1)
     recordDailyReview(2)
-    render(createElement(App))
+    render(createElement(App, { vocabulary }))
 
     expect(screen.getByRole('heading', { name: 'Daily goal complete' })).toBeInTheDocument()
 
@@ -83,7 +92,7 @@ describe('App', () => {
     )
     localStorage.setItem('rsr_progress', JSON.stringify(progress))
 
-    render(createElement(App))
+    render(createElement(App, { vocabulary }))
 
     expect(screen.getByRole('heading', { name: 'You’re all caught up' })).toBeInTheDocument()
     expect(screen.getByText(/No words are due for practice/)).toBeInTheDocument()
