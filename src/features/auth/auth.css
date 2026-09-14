@@ -1,0 +1,94 @@
+.auth-shell {
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(124, 58, 237, 0.16), transparent 28rem),
+    radial-gradient(circle at 88% 22%, rgba(14, 165, 233, 0.12), transparent 24rem),
+    var(--bg);
+}
+
+.auth-card {
+  width: min(100%, 430px);
+  box-sizing: border-box;
+  padding: 36px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--bg) 96%, white 4%);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.1);
+  text-align: left;
+}
+
+.auth-brand {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  place-items: center;
+  border-radius: 15px;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+}
+
+.auth-card h1 { margin: 0 0 10px; font-size: 32px; }
+.auth-subtitle { margin-bottom: 26px; font-size: 14px; }
+.auth-form { display: grid; gap: 16px; }
+.auth-form label { display: grid; gap: 7px; color: var(--text-h); font-size: 13px; font-weight: 650; }
+
+.auth-form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-h);
+  background: var(--bg);
+  font: inherit;
+}
+
+.auth-form input:focus { outline: 2px solid var(--accent-border); border-color: var(--accent); }
+.auth-error { color: #b91c1c; font-size: 13px; }
+.auth-message { color: #15803d; font-size: 13px; }
+.auth-status { color: var(--text-h); font-weight: 650; }
+
+.auth-switch {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 22px;
+  font-size: 13px;
+}
+
+.auth-switch button,
+.account-bar button {
+  padding: 0;
+  border: 0;
+  color: var(--accent);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.account-bar {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  background: var(--bg);
+  font-size: 12px;
+}
+
+.account-error { color: #b91c1c; }
+
+@media (max-width: 520px) {
+  .auth-card { padding: 28px 22px; }
+  .account-bar { padding-inline: 18px; }
+}
