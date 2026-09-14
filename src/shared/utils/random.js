@@ -4,12 +4,12 @@ export function getRandomNumberForSpecificLimit(length = 4) {
   return num;
 }
 
-export function getSpecificLengthOfRandomNumbers(random_length = 2 , data = []) {
+export function getSpecificLengthOfRandomNumbers(random_length = 2 , data = [] , exclude = []) {
   let arr = [];
 
-  while(arr.length <= random_length) {
+  while(arr.length < random_length) {
     let random_num = getRandomNumberForSpecificLimit(data.length)
-    if(!arr.includes(random_num)) { 
+    if(!arr.includes(random_num) && !exclude.includes(random_num)) {
       arr.push(random_num)
     }
   }

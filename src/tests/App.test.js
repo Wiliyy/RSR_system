@@ -1,82 +1,91 @@
-import { filterByField , filterByFieldStartsWith } from '../shared/utils/filters.js'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { fireEvent, render, screen } from '@testing-library/react'
+import { createElement } from 'react'
+import App from '../App'
 import vocabulary from '../data/vocabulary.json'
-import { getRandomNumberForSpecificLimit } from '../shared/utils/random.js'
+import { recordDailyReview, saveDailyLimit } from '../shared/utils/dailySession'
 
-/*
-let arr = [];
-for(let i = 0; i < 10 ; i++){
-  arr.push(i);
-}
-
-let first_launch = true ;
-const user_limit = 10; 
-const random_number =  Math.floor(Math.random(0,10) * 10);
-const random_Q_index = (arr)=> Math.floor(Math.random() * 4);
-
-
-const previos_vocabulary = 0; 
-const visible = vocabulary.slice(0,user_limit);
-
-test('get question from data ' , () => {
-  const data = vocabulary.slice(0, user_limit);
-  let Q_arr = [];
-  //console.log(random_Q_index(arr));
-  //console.log(data[random_number].translation)
-
-  Q_arr.splice(random_Q_index(Q_arr) , 0 , data[random_number].word)
-  Q_arr.splice(random_Q_index(Q_arr) , 0 , data[random_number - 1 > 0 ?random_number - 1 :random_number + 1 ].word)
-  Q_arr.splice(random_Q_index(Q_arr) , 0 , data[random_number - 2 > 0 ?random_number - 2 :random_number+ 2 ].word)
-  Q_arr.splice(random_Q_index(Q_arr) , 0 , data[random_number - 3 > 0 ?random_number - 3 :random_number + 3 ].word)
-
-  Q_arr.map((x,y)=> {
-    // x==data[random_number].word ? console.log(x) : console.log("wrong")
-    //console.log(x) 
-    //console.log(x == data[random_number].word && "right")
+describe('App', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    Object.defineProperty(globalThis, 'speechSynthesis', {
+      configurable: true,
+      value: {
+        cancel: vi.fn(),
+        getVoices: () => [],
+        speak: vi.fn(),
+      },
+    })
+    Object.defineProperty(globalThis, 'SpeechSynthesisUtterance', {
+      configurable: true,
+      value: class SpeechSynthesisUtterance {
+        constructor(text) {
+          this.text = text
+        }
+      },
+    })
   })
 
-  expect(data.length).toBe(user_limit);
-})
+  it('plays the English pronunciation for the current word', () => {
+    render(createElement(App))
 
+    fireEvent.click(screen.getByRole('button', { name: 'Listen to serendipity' }))
 
-test('get 3 random number'  , () =>{
-  let arr = [];
-
-  while(arr.length <= 2) {
-    let random_num = getRandomNumberForSpecificLimit(user_limit)
-    if(!arr.includes(random_num)) { 
-      arr.push(random_num)
-    }
-  }
-  //console.log("arr")
-  //console.log(arr)
-})
-
-test('get data from the source ' , () => {
-  const data = vocabulary.slice(0, user_limit);
-  console.log(data)
-  data.map((x,y)=>{
-      console.log(x.word)
+    expect(globalThis.speechSynthesis.speak).toHaveBeenCalledOnce()
+    expect(globalThis.speechSynthesis.speak.mock.calls[0][0].text).toBe('serendipity')
   })
-  expect(data.length).toBe(user_limit);
+
+  it('shows a due word and saves progress when its translation is selected', () => {
+    saveDailyLimit(2)
+    render(createElement(App))
+
+    expect(screen.getByRole('heading', { name: 'serendipity' })).toBeInTheDocument()
+    expect(screen.getByText('0 of 2 reviews today')).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: vocabulary[0].translation }))
+
+    expect(screen.getByText('Correct')).toBeInTheDocument()
+    expect(JSON.parse(localStorage.getItem('rsr_progress'))['1'].rating).toBe('good')
+    expect(screen.getByText('1 of 2 reviews today')).toBeInTheDocument()
+  })
+
+  it('stops at the daily limit and lets the user increase it in settings', () => {
+    saveDailyLimit(2)
+    recordDailyReview(1)
+    recordDailyReview(2)
+    render(createElement(App))
+
+    expect(screen.getByRole('heading', { name: 'Daily goal complete' })).toBeInTheDocument()
+
+    fireEvent.click(screen.getByRole('button', { name: 'Open settings' }))
+    fireEvent.change(screen.getByRole('spinbutton', { name: 'Daily review limit' }), {
+      target: { value: '3' },
+    })
+    fireEvent.click(screen.getByRole('button', { name: 'Save settings' }))
+
+    expect(screen.getByRole('heading', { name: 'resilience' })).toBeInTheDocument()
+    expect(screen.getByText('2 of 3 reviews today')).toBeInTheDocument()
+  })
+
+  it('shows an empty state when every word is scheduled for later', () => {
+    const progress = Object.fromEntries(
+      vocabulary.map((item) => [
+        item.id,
+        {
+          itemId: item.id,
+          repetition: 1,
+          ease: 2.6,
+          interval: 1,
+          lastReview: new Date().toISOString(),
+          rating: 'good',
+        },
+      ]),
+    )
+    localStorage.setItem('rsr_progress', JSON.stringify(progress))
+
+    render(createElement(App))
+
+    expect(screen.getByRole('heading', { name: 'You’re all caught up' })).toBeInTheDocument()
+    expect(screen.getByText(/No words are due for practice/)).toBeInTheDocument()
+  })
 })
-
-
-test('test react test ' , () => {
-  arr.splice(arr.indexOf(random_number) , 1);
-  console.log(arr)
-  expect(random_number).toBe(9);
-})
-
-
-test('test array length ' , () => {
-  expect(arr.length).toBe(10);
-})
-
-test('test array filterByField' , () => {
-  console.log(filterByFieldStartsWith(visible ,"tags", "e").length);
-  expect(filterByFieldStartsWith(visible ,"tags", "e").length).toBe(2);
-})
-
-*/
-
-

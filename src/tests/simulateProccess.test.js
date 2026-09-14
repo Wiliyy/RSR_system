@@ -1,13 +1,8 @@
+import { describe, expect, test } from 'vitest'
 import {getRandomNumberForSpecificLimit } from '../shared/utils/random'
 
-let data = [2,4,6,8];
-let dataLength = data.length;
-
-let local_storaage_simulate = [
-   //{ id: 7, Repetition: 0, interval: 0, ease_factor: 2.5 },
-]
-let storage_length = local_storaage_simulate.length;
-let tested_id = getRandomNumberForSpecificLimit(dataLength)+1 
+const dataLength = 4
+const tested_id = getRandomNumberForSpecificLimit(dataLength) + 1
 
 describe('simulate test ' , () => {
 
@@ -18,7 +13,6 @@ describe('simulate test ' , () => {
 
 // get answer -> 1 random number from array // for example 6
 test("get answer or tested item id " , ()=> {
-    console.log(tested_id);
     expect(tested_id).toBeGreaterThan(-1)
   } 
  )
