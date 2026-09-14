@@ -398,5 +398,55 @@
     "example": "The children loved the whimsical illustrations in the storybook.",
     "level": "advanced",
     "tags": ["aesthetic", "character"]
+  },
+  {
+    "id": 41,
+    "word": "allocate",
+    "lang": "en",
+    "translation": "يُخصّص",
+    "meaning": "To distribute resources for a particular purpose",
+    "example": "The government should allocate more funding to public education.",
+    "level": "intermediate",
+    "tags": ["resources", "planning"]
+  },
+  {
+    "id": 42,
+    "word": "consequence",
+    "lang": "en",
+    "translation": "نتيجة / عاقبة",
+    "meaning": "A result or effect of an action or situation",
+    "example": "Air pollution is a serious consequence of rapid industrial growth.",
+    "level": "intermediate",
+    "tags": ["cause", "effect"]
+  },
+  {
+    "id": 43,
+    "word": "decline",
+    "lang": "en",
+    "translation": "انخفاض / يتراجع",
+    "meaning": "To decrease in amount, quality, or importance",
+    "example": "The report shows a steady decline in unemployment rates.",
+    "level": "intermediate",
+    "tags": ["change", "trends"]
+  },
+  {
+    "id": 44,
+    "word": "factor",
+    "lang": "en",
+    "translation": "عامل / عنصر مؤثر",
+    "meaning": "Something that influences a result or situation",
+    "example": "Cost is an important factor when students choose a university.",
+    "level": "intermediate",
+    "tags": ["analysis", "influence"]
+  },
+  {
+    "id": 45,
+    "word": "sustainable",
+    "lang": "en",
+    "translation": "مستدام",
+    "meaning": "Able to continue without exhausting natural resources",
+    "example": "Cities need sustainable transport systems to reduce pollution.",
+    "level": "intermediate",
+    "tags": ["environment", "development"]
   }
 ]
